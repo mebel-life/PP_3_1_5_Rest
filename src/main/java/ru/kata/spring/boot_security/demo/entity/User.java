@@ -1,5 +1,6 @@
 package ru.kata.spring.boot_security.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -103,6 +104,7 @@ public class User implements UserDetails {
 
 
    @Override
+
    public Collection<? extends GrantedAuthority> getAuthorities() {
       return getRoles();
    }
@@ -117,21 +119,25 @@ public class User implements UserDetails {
    }
 
    @Override
+
    public boolean isAccountNonExpired() {
       return true;
    }
 
    @Override
+
    public boolean isAccountNonLocked() {
       return true;
    }
 
    @Override
+
    public boolean isCredentialsNonExpired() {
       return true;
    }
 
    @Override
+
    public boolean isEnabled() {
       return true;
    }
